@@ -39,16 +39,19 @@ def train():
     test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
 
     model = AttentionAligner(step_size, d_model, block_size, n_head, n_layer, dropout)
-    model = nn.DataParallel(model)
-    model.to("cuda")
+    with torch.no_grad():
+        checkpoint = torch.load("./checkpoints/encoder_epoch_0.pt")
+        model.to("cuda")
+        model = nn.DataParallel(model)
+        model.load_state_dict(checkpoint)
     model.train()
     # Print the number of parameters in the model
     model_parameters = filter(lambda p: p.requires_grad, model.parameters())
     print(f"Number of parameters: {sum([torch.prod(torch.tensor(p.shape)) for p in model_parameters])}")
 
     # Create a PyTorch optimizer
-    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
-    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1, gamma=0.9)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=0.0001)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1, verbose=True, gamma=0.9)
 
     for epoch in range(EPOCHS):
         batch = 0
@@ -64,11 +67,12 @@ def train():
             logits, loss = model(xb, yb)
             if batch % 500 == 0:
                 print(f"Loss at epoch {epoch}, batch {batch}: {loss}")
+            
             optimizer.zero_grad(set_to_none=True)
             loss.sum().backward()
-            optimizer.step()
-                
+            optimizer.step()   
             batch += 1
+        scheduler.step()
 
         torch.save(model.state_dict(), f"./checkpoints/encoder_epoch_{epoch}.pt")
 
