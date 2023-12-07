@@ -1,0 +1,69 @@
+import torch
+from torch.utils.data import Dataset, DataLoader
+import torch.nn as nn
+import open_clip
+from diffusers import AudioLDMPipeline
+from data import get_models, get_data, get_embeds, EmbeddingsDataset
+from encoder3 import AttentionAligner3
+
+def train():
+    CLIP, CLAP, TOKENIZER = get_models()
+    train_data, test_data = get_data()
+    train_dataset = EmbeddingsDataset(train_data)
+    test_dataset = EmbeddingsDataset(test_data)
+    print(f"Length of test data: {len(test_dataset)}")
+    print(f"Length of train data: {len(train_dataset)}")
+
+    torch.manual_seed(420)
+
+    # Hyperparameters.
+    # I suggest you start with very small values, unless you have a strong PC or are running on the cluster
+    batch_size = 64 # How many independent sequences will we process in parallel?
+    block_size = 512 # What is the maximum context length for predictions?
+    EPOCHS = 40 # Max iterations we run the optimization
+    # How often we evaluate across the optimization; every 500 iterations
+    learning_rate = 3e-4
+
+    device = 'cuda'
+    # How many batches we use each time we evaluate
+    d_model = 360
+    n_head = 12 # This implied that each head has a dimension for the key, query, and values of d_model / 6.
+    n_layer = 16 # This implies we have 16 turns to mix the embeddigs; this is "Nx" in the paper
+    # ------------
+
+    train_dl = DataLoader(train_dataset, batch_size, shuffle=True)
+    test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
+
+    model = AttentionAligner3()
+    with torch.no_grad():
+        # checkpoint = torch.load("./checkpoints/encoder_epoch_1.pt")
+        model.to("cuda")
+        model = nn.DataParallel(model)
+        #model.load_state_dict(checkpoint)
+    model.train()
+    # Print the number of parameters in the model
+    model_parameters = filter(lambda p: p.requires_grad, model.parameters())
+    print(f"Number of parameters: {sum([torch.prod(torch.tensor(p.shape)) for p in model_parameters])}")
+
+    # Create a PyTorch optimizer
+    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=0.0001)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1, verbose=True, gamma=0.9)
+
+    for epoch in range(EPOCHS):
+        batch = 0
+        for xb, yb in train_dl:
+            # Evaluate the loss
+            logits, loss = model(xb, yb)
+            if batch % 50 == 0 and loss != None:
+                print(f"Loss at epoch {epoch}, batch {batch}: {loss}")
+            
+            optimizer.zero_grad(set_to_none=True)
+            loss.sum().backward()
+            optimizer.step()   
+            batch += 1
+        scheduler.step()
+
+        torch.save(model.state_dict(), f"./checkpoints/encoder2_euclid_loss_epoch_{epoch}.pt")
+
+train()
+print("TRAINING DONE")
