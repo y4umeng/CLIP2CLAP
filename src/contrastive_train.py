@@ -63,4 +63,4 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
     print(f"Test average loss after epoch {epoch} is {test_loss/num_data_points}")
 
     #save model
-    torch.save(model.state_dict(), f"./checkpoints/linear_contrastive_epoch_{epoch}.pt")
+    torch.save(model.state_dict(), f"./checkpoints/linear_euclid_contrastive_epoch_{epoch}.pt")
