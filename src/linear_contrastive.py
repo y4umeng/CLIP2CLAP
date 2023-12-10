@@ -7,18 +7,10 @@ import open_clip
 from diffusers import AudioLDMPipeline
 from data import get_models, get_data, get_embeds, EmbeddingsDataset
 from contrastive_train import train_contrastive_model
-
-class LinearAligner(nn.Module):
-  def __init__(self, clip_embed_dim, clap_embed_dim):
-    super().__init__()
-    self.linear = nn.Linear(clip_embed_dim, clap_embed_dim)
-
-  def forward(self, x):
-    # Pass through linear layer 1
-    return self.linear(x)
+from linear import LinearAligner
 
 def train():
-    CLIP, CLAP, TOKENIZER = get_models()
+    _, _, _ = get_models()
     train_data, test_data = get_data()
     train_dataset = EmbeddingsDataset(train_data)
     test_dataset = EmbeddingsDataset(test_data)
@@ -34,6 +26,12 @@ def train():
     device = 'cuda'
     clip_embed_dim = 768
     clap_embed_dim = 512
+
+    print(f"Batch size: {batch_size}")
+    print(f"Epochs: {EPOCHS}")
+    print(f"LR: {LR}")
+    print(f"CLIP embed: {clip_embed_dim}")
+    print(f"CLAP embed: {clap_embed_dim}")
 
     train_dl = DataLoader(train_dataset, batch_size, shuffle=True)
     test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
