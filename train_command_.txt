@@ -1,0 +1,1 @@
+nohup python -u train_encoder3.py > train_encoder5.log &

@@ -178,6 +178,5 @@ class AttentionAligner(nn.Module):
         if targets is None:
             loss = None
         else:
-            loss = nn.L1Loss()(logits, targets)
-
+            loss = torch.sum(torch.sqrt(torch.sum(torch.pow(torch.subtract(logits, targets), 2), dim=-1)))   
         return logits, loss

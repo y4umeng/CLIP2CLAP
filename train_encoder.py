@@ -40,10 +40,10 @@ def train():
 
     model = AttentionAligner(step_size, d_model, block_size, n_head, n_layer, dropout)
     with torch.no_grad():
-        checkpoint = torch.load("./checkpoints/encoder_epoch_0.pt")
+        checkpoint = torch.load("./checkpoints/encoder_epoch_1.pt")
         model.to("cuda")
         model = nn.DataParallel(model)
-        model.load_state_dict(checkpoint)
+        #model.load_state_dict(checkpoint)
     model.train()
     # Print the number of parameters in the model
     model_parameters = filter(lambda p: p.requires_grad, model.parameters())
@@ -65,7 +65,7 @@ def train():
 
             # Evaluate the loss
             logits, loss = model(xb, yb)
-            if batch % 500 == 0:
+            if batch % 50 == 0 and loss != None:
                 print(f"Loss at epoch {epoch}, batch {batch}: {loss}")
             
             optimizer.zero_grad(set_to_none=True)
@@ -74,7 +74,7 @@ def train():
             batch += 1
         scheduler.step()
 
-        torch.save(model.state_dict(), f"./checkpoints/encoder_epoch_{epoch}.pt")
+        torch.save(model.state_dict(), f"./checkpoints/encoder_euclid_loss_epoch_{epoch}.pt")
 
 train()
 print("TRAINING DONE")
