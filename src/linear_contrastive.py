@@ -47,6 +47,6 @@ def train():
 
     optimizer = torch.optim.Adam(model.parameters(), lr=LR)
 
-    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear_contrastive_loss")
+    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear_contrastive_euclid")
 
 train()
