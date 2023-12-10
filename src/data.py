@@ -29,11 +29,11 @@ def get_models():
     return CLIP, CLAP, TOKENIZER
 
 def get_data():
-    train_file = open('./data/captions_train2017.json')
+    train_file = open('../data/captions_train2017.json')
     train_data = json.load(train_file)
     train_data = [d["caption"] for d in train_data["annotations"]]
 
-    test_file = open('./data/captions_val2017.json')
+    test_file = open('../data/captions_val2017.json')
     test_data = json.load(test_file)
     test_data = [d["caption"] for d in test_data["annotations"]]
     return train_data, test_data
