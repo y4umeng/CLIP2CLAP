@@ -45,7 +45,7 @@ def train():
     model_parameters = filter(lambda p: p.requires_grad, model.parameters())
     print(f"Number of parameters: {sum([torch.prod(torch.tensor(p.shape)) for p in model_parameters])}")
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=LR)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
     train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear_contrastive_euclid")
 
