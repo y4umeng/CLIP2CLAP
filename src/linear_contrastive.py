@@ -4,7 +4,6 @@ from torchvision import datasets
 from torchvision.transforms import ToTensor, transforms
 import torch.nn as nn
 import open_clip
-from torchmetrics import Accuracy
 from diffusers import AudioLDMPipeline
 from data import get_models, get_data, get_embeds, EmbeddingsDataset
 from contrastive_train import train_contrastive_model
@@ -49,8 +48,7 @@ def train():
     print(f"Number of parameters: {sum([torch.prod(torch.tensor(p.shape)) for p in model_parameters])}")
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
-    accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
 
-    train_contrastive_model(train_dl, test_dl, model, optimizer, None, accuracy, EPOCHS, "linear_contrastive_euclid_512")
+    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear_contrastive_euclid_512")
 
 train()

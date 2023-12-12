@@ -3,6 +3,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import datasets
 from torchvision.transforms import ToTensor, transforms
 import torch.nn as nn
+from torchmetrics import Accuracy
 
 def calc_loss_cos_similarity(pred, yb, t):
   logits = torch.mm(pred, torch.t(yb)) * torch.exp(t)
@@ -22,7 +23,7 @@ def calc_loss_euclid(pred, yb, t, accuracy):
   accuracy_2 = accuracy(logits, labels)
   return (loss_1 + loss_2)/2, (accuracy_1 + accuracy_2)/2
 
-def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, accuracy, num_epochs, model_name):
+def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_epochs, model_name):
   t = nn.Parameter(torch.tensor([0.0])).to("cuda")
   for epoch in range(num_epochs):
     model.train()
@@ -32,9 +33,11 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, accu
     num_batch = 0
     for xb, yb in train_dl:
       #get model predictions [B, d_model=512]
+      batch_size = xb.shape[0]
       pred = model(xb)
 
       # contrastive loss
+      accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
       loss, acc = calc_loss_euclid(pred, yb, t, accuracy)
 
       optimizer.zero_grad()
@@ -42,11 +45,11 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, accu
       optimizer.step()
 
       train_loss += loss
-      train_acc += acc * xb.shape[0]
-      num_data_points += xb.shape[0]
+      train_acc += acc * batch_size
+      num_data_points += batch_size
 
       if num_batch % 500 == 0:
-        print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/xb.shape[0]} Avg Accuracy: {acc}")
+        print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/batch_size} Avg Accuracy: {acc}")
 
       num_batch += 1
 
@@ -59,14 +62,16 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, accu
     num_data_points = 0
     for xb, yb in test_dl:
       #get model predictions [B, d_model=512]
+      batch_size = xb.shape[0]
       pred = model(xb)
 
       # contrastive loss
+      accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
       loss, acc = calc_loss_euclid(pred, yb, t, accuracy)
 
       test_loss += loss
-      test_acc += acc * xb.shape[0]
-      num_data_points += xb.shape[0]
+      test_acc += acc * batch_size
+      num_data_points += batch_size
 
     print(f"Test average loss after epoch {epoch} is {test_loss/num_data_points}")
     print(f"Test average accuracy after epoch {epoch} is {test_acc/num_data_points}")
