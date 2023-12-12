@@ -15,11 +15,11 @@ def get_models():
     global TOKENIZER
 
     if not CLIP:
-        CLIP, _, preprocess = open_clip.create_model_and_transforms('ViT-L-14', pretrained='datacomp_xl_s13b_b90k')
+        CLIP, _, preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrained='laion2b_s34b_b79k')
         CLIP.to("cuda")
     
     if not TOKENIZER:
-        TOKENIZER = open_clip.get_tokenizer('ViT-L-14')
+        TOKENIZER = open_clip.get_tokenizer('ViT-B-32')
 
     if not CLAP:
         repo_id = "cvssp/audioldm-l-full"

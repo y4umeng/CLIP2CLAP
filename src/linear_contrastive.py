@@ -25,7 +25,7 @@ def train():
     EPOCHS = 40
     LR = 0.001
     device = 'cuda'
-    clip_embed_dim = 768
+    clip_embed_dim = 512
     clap_embed_dim = 512
 
     print(f"Batch size: {batch_size}")
@@ -40,8 +40,8 @@ def train():
     model = LinearAligner(clip_embed_dim, clap_embed_dim)
     model.to(device)
     model = nn.DataParallel(model)
-    checkpoint = torch.load("../checkpoints/linear_contrastive_loss_epoch_8.pt")
-    model.load_state_dict(checkpoint)
+    # checkpoint = torch.load("../checkpoints/linear_contrastive_loss_epoch_8.pt")
+    # model.load_state_dict(checkpoint)
     model.train()
 
     # Print the number of parameters in the model
