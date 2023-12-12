@@ -9,4 +9,4 @@ class LinearAligner(nn.Module):
 
   def forward(self, x):
     # Pass through linear layer 1
-    return self.linear(x)
+    return torch.clamp(self.linear(x), min=-1, max=1)
