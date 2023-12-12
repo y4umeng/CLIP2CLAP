@@ -47,7 +47,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, accu
 
       if num_batch % 1 == 0:
         print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/xb.shape[0]} Avg Accuracy: {acc}")
-      if num_batch % 10:
+      if num_batch % 100 == 0:
         break
       num_batch += 1
 
