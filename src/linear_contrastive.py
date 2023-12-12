@@ -51,6 +51,6 @@ def train():
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
     accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
 
-    train_contrastive_model(train_dl, test_dl, model, optimizer, None, accuracy, EPOCHS, "linear_contrastive_euclid_pretrained_on_cos_sim")
+    train_contrastive_model(train_dl, test_dl, model, optimizer, None, accuracy, EPOCHS, "linear_contrastive_euclid_512")
 
 train()
