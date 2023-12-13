@@ -38,7 +38,7 @@ def calc_loss_euclid(pred, yb, accuracy, margin):
   return (loss_1 + loss_2)/2, (accuracy_1 + accuracy_2)/2
 
 def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_epochs, model_name, start_epoch):
-  margin = 0.7
+  margin = 0.0
   torch.autograd.set_detect_anomaly(True)
   for epoch in range(start_epoch, start_epoch + num_epochs):
     print(f"EPOCH {epoch} BEGINS")
@@ -101,5 +101,5 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
     print(f"Test average accuracy after epoch {epoch} is {test_acc/num_data_points}\n")
 
     if margin < 1.0:
-      margin += 0.05
+      margin += 0.2
     print(f"Margin is now {margin}.\n")
