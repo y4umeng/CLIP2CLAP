@@ -27,6 +27,7 @@ def calc_loss_euclid(pred, yb, t, accuracy):
 
 def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_epochs, model_name):
   t = nn.Parameter(torch.tensor([0.0])).to("cuda")
+  torch.autograd.set_detect_anomaly(True)
   for epoch in range(num_epochs):
     model.train()
     train_loss = 0.0
