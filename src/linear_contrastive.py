@@ -8,7 +8,7 @@ from diffusers import AudioLDMPipeline
 from data import get_models, get_data, get_embeds, EmbeddingsDataset
 from contrastive_train import train_contrastive_model
 from linear import LinearAligner
-
+from linear2 import LinearAligner2
 def train():
     _, _, _ = get_models()
     train_data, test_data = get_data()
@@ -39,8 +39,8 @@ def train():
     model = LinearAligner(clip_embed_dim, clap_embed_dim)
     model.to(device)
     model = nn.DataParallel(model)
-    # checkpoint = torch.load("../checkpoints/linear_contrastive_loss_epoch_8.pt")
-    # model.load_state_dict(checkpoint)
+    checkpoint = torch.load("../checkpoints/linear_contrastive_euclid_512_epoch_3.pt")
+    model.load_state_dict(checkpoint)
     model.train()
 
     # Print the number of parameters in the model
@@ -49,6 +49,6 @@ def train():
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
-    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear_contrastive_euclid_512")
+    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear_contrastive_euclid_512", 4)
 
 train()

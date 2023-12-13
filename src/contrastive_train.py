@@ -25,10 +25,10 @@ def calc_loss_euclid(pred, yb, t, accuracy):
   accuracy_2 = accuracy(logits, labels)
   return (loss_1 + loss_2)/2, (accuracy_1 + accuracy_2)/2
 
-def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_epochs, model_name):
+def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_epochs, model_name, start_epoch):
   t = nn.Parameter(torch.tensor([0.0])).to("cuda")
   torch.autograd.set_detect_anomaly(True)
-  for epoch in range(num_epochs):
+  for epoch in range(start_epoch, start_epoch + num_epochs):
     model.train()
     train_loss = 0.0
     train_acc = 0.0
