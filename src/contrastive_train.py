@@ -18,14 +18,14 @@ def calc_loss_euclid(pred, yb, accuracy, margin):
   logits = torch.cdist(pred, yb, p=2)
   logits = torch.pow(logits, -1)
 
-  print(f"Logit mean: {torch.mean(logits)}")
-  print(f"Logit min: {torch.min(logits)}")
+  # print(f"Logit mean: {torch.mean(logits)}")
+  # print(f"Logit min: {torch.min(logits)}")
   
   # apply margin
   logits = nn.ReLU()(logits - margin) 
 
-  print(f"Logit mean: {torch.mean(logits)}")
-  print(f"Logit min: {torch.min(logits)}")
+  # print(f"Logit mean: {torch.mean(logits)}")
+  # print(f"Logit min: {torch.min(logits)}")
   
   # do cross entropy along both axes
   labels = torch.arange(yb.shape[0]).to("cuda")
