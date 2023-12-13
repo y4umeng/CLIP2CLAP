@@ -38,7 +38,7 @@ def calc_loss_euclid(pred, yb, accuracy, margin):
   return (loss_1 + loss_2)/2, (accuracy_1 + accuracy_2)/2
 
 def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_epochs, model_name, start_epoch):
-  margin = nn.Parameter(torch.tensor([0.75])).to("cuda")
+  margin = nn.Parameter(torch.tensor([1.0])).to("cuda")
   torch.autograd.set_detect_anomaly(True)
   for epoch in range(start_epoch, start_epoch + num_epochs):
     print(f"EPOCH {epoch} BEGINS")
