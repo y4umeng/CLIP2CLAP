@@ -19,7 +19,7 @@ def calc_loss_euclid(pred, yb, t, accuracy, margin):
   logits = torch.pow(logits, -1) * torch.exp(t)
 
   print(f"Logit mean: {torch.mean(logits)}")
-  print(f"Logit stddev: {torch.dim(logits)}")
+  print(f"Logit stddev: {torch.std(logits)}")
   
   # apply margin
   logits = nn.ReLU()(logits - margin) + margin
