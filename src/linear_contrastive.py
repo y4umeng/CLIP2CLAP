@@ -39,8 +39,8 @@ def train():
     model = LinearAligner(clip_embed_dim, clap_embed_dim)
     model.to(device)
     model = nn.DataParallel(model)
-    checkpoint = torch.load("../checkpoints/linear_contrastive_euclid_512_epoch_3.pt")
-    model.load_state_dict(checkpoint)
+    # checkpoint = torch.load("../checkpoints/linear_contrastive_euclid_512_epoch_3.pt")
+    # model.load_state_dict(checkpoint)
     model.train()
 
     # Print the number of parameters in the model
@@ -49,6 +49,6 @@ def train():
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
-    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear_contrastive_euclid_512", 4)
+    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear2_contrastive_euclid_512", 0)
 
 train()

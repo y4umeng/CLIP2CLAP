@@ -9,7 +9,6 @@ class LinearAligner2(nn.Module):
     self.linear2 = nn.Linear(clap_embed_dim, clap_embed_dim)
 
   def forward(self, x):
-    # Pass through linear layer 1
     x = self.linear(x)
     x = nn.Tanh()(x)
-    return torch.clamp(self.linear2(x), min=-1, max=1)
+    return torch.clamp(self.linear2(x), min=-0.3, max=0.3)
