@@ -36,11 +36,11 @@ def train():
     train_dl = DataLoader(train_dataset, batch_size, shuffle=True)
     test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
 
-    model = LinearAligner2(clip_embed_dim, clap_embed_dim)
+    model = LinearAligner(clip_embed_dim, clap_embed_dim)
     model.to(device)
     model = nn.DataParallel(model)
-    # checkpoint = torch.load("../checkpoints/linear_contrastive_euclid_512_epoch_3.pt")
-    # model.load_state_dict(checkpoint)
+    checkpoint = torch.load("../checkpoints/linear_contrastive_euclid_512_epoch_5.pt")
+    model.load_state_dict(checkpoint)
     model.train()
 
     # Print the number of parameters in the model
