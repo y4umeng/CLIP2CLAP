@@ -34,6 +34,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
     train_acc = 0.0
     num_data_points = 0
     num_batch = 0
+    nans = 0
     for xb, yb in train_dl:
       #get model predictions [B, d_model=512]
       batch_size = xb.shape[0]
@@ -42,6 +43,9 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
       loss, acc = calc_loss_euclid(pred, yb, t, accuracy)
+
+      if torch.isnan(loss):
+        nans += 1
 
       optimizer.zero_grad()
       loss.sum().backward()
@@ -52,7 +56,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
       num_data_points += batch_size
 
       if num_batch % 1 == 0:
-        print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/batch_size} Avg Accuracy: {acc}")
+        print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/batch_size} Avg Accuracy: {acc} Nans: {nans}")
 
       num_batch += 1
 
