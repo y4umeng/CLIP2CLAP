@@ -16,13 +16,16 @@ def calc_loss_cos_similarity(pred, yb, t):
 def calc_loss_euclid(pred, yb, t, accuracy, margin):
   # calculate distance metric
   logits = torch.cdist(pred, yb, p=2)
-  logits = torch.pow(logits, -1) * torch.exp(t)
+  logits = torch.pow(logits, -1)
 
   print(f"Logit mean: {torch.mean(logits)}")
-  print(f"Logit stddev: {torch.std(logits)}")
+  print(f"Logit min: {torch.min(logits)}")
   
   # apply margin
   logits = nn.ReLU()(logits - margin) + margin
+
+  print(f"Logit mean: {torch.mean(logits)}")
+  print(f"Logit min: {torch.min(logits)}")
   
   # do cross entropy along both axes
   labels = torch.arange(yb.shape[0]).to("cuda")
@@ -35,8 +38,7 @@ def calc_loss_euclid(pred, yb, t, accuracy, margin):
   return (loss_1 + loss_2)/2, (accuracy_1 + accuracy_2)/2
 
 def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_epochs, model_name, start_epoch):
-  temperature = nn.Parameter(torch.tensor([0.0])).to("cuda")
-  margin = nn.Parameter(torch.tensor([0.0])).to("cuda")
+  margin = nn.Parameter(torch.tensor([0.5])).to("cuda")
   torch.autograd.set_detect_anomaly(True)
   for epoch in range(start_epoch, start_epoch + num_epochs):
     print(f"EPOCH {epoch} BEGINS")
@@ -53,7 +55,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
-      loss, acc = calc_loss_euclid(pred, yb, temperature, accuracy, margin)
+      loss, acc = calc_loss_euclid(pred, yb, accuracy, margin)
 
       if torch.isnan(loss):
         nans += 1
@@ -68,7 +70,6 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       if num_batch % 1 == 0:
         print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/batch_size} Avg Accuracy: {acc} Nans: {nans} Margin: {margin.item()}")
-        print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/batch_size} Avg Accuracy: {acc} Nans: {nans} Margin: {margin.item()} Temp: {temperature}")
 
       num_batch += 1
 
@@ -90,7 +91,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
-      loss, acc = calc_loss_euclid(pred, yb, temperature, accuracy, margin)
+      loss, acc = calc_loss_euclid(pred, yb, accuracy, margin)
 
       test_loss += loss
       test_acc += acc * batch_size
