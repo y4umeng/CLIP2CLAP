@@ -67,11 +67,8 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
       num_data_points += batch_size
 
       if num_batch % 1 == 0:
-<<<<<<< HEAD
         print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/batch_size} Avg Accuracy: {acc} Nans: {nans} Margin: {margin.item()}")
-=======
         print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/batch_size} Avg Accuracy: {acc} Nans: {nans} Margin: {margin.item()} Temp: {temperature}")
->>>>>>> 66e3d555342363575f0f3850e34cb3d305f2e7d6
 
       num_batch += 1
 
