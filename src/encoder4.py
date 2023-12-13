@@ -34,7 +34,7 @@ class AttentionAligner4(nn.Module):
 
         logits = self.ff2(x).squeeze(-1)
         
-        return logits
+        return torch.clamp(logits, min=-.2, max=.2)
 
 
 

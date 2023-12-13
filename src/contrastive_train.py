@@ -58,6 +58,9 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
     print(f"Train average loss after epoch {epoch} is {train_loss/num_data_points}")
     print(f"Train average acc after epoch {epoch} is {train_acc/num_data_points}")
 
+    #save model
+    torch.save(model.state_dict(), f"../checkpoints/{model_name}_epoch_{epoch}.pt")
+
     model.eval()
     test_loss = 0.0
     test_acc = 0.0
@@ -77,6 +80,3 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
     print(f"Test average loss after epoch {epoch} is {test_loss/num_data_points}")
     print(f"Test average accuracy after epoch {epoch} is {test_acc/num_data_points}")
-
-    #save model
-    torch.save(model.state_dict(), f"../checkpoints/{model_name}_epoch_{epoch}.pt")
