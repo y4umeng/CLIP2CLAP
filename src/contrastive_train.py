@@ -22,7 +22,7 @@ def calc_loss_euclid(pred, yb, accuracy, margin):
   print(f"Logit min: {torch.min(logits)}")
   
   # apply margin
-  logits = nn.ReLU()(logits - margin) + margin
+  logits = nn.ReLU()(logits - margin) 
 
   print(f"Logit mean: {torch.mean(logits)}")
   print(f"Logit min: {torch.min(logits)}")
