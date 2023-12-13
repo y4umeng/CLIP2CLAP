@@ -15,7 +15,7 @@ def calc_loss_cos_similarity(pred, yb, t):
 
 def calc_loss_euclid(pred, yb, t, accuracy):
   logits = torch.cdist(pred, yb, p=2)
-  logits[logits==0] = 1/10000
+  with torch.no_grad(): logits[logits==0] = 1/10000
   logits = torch.pow(logits, -1) * torch.exp(t)
   labels = torch.arange(yb.shape[0]).to("cuda")
   loss_1 = nn.CrossEntropyLoss()(logits, labels)
