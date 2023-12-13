@@ -13,7 +13,7 @@ def calc_loss_cos_similarity(pred, yb, t):
   loss_2 = nn.CrossEntropyLoss()(logits, labels)
   return (loss_1 + loss_2)/2
 
-def calc_loss_euclid(pred, yb, t, accuracy, margin):
+def calc_loss_euclid(pred, yb, accuracy, margin):
   # calculate distance metric
   logits = torch.cdist(pred, yb, p=2)
   logits = torch.pow(logits, -1)
