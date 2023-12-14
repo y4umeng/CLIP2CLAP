@@ -1,0 +1,525 @@
+vocoder/model.safetensors not found
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00, 21.60it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.15it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.61it/s]
+Length of test data: 25014
+Length of train data: 591753
+Batch size: 32
+Epochs: 40
+LR: 0.001
+CLIP embed: 512
+CLAP embed: 512
+Number of parameters: 525312
+EPOCH 0 BEGINS
+Epoch: 0 Batch: 0 Avg Loss: 0.10828755795955658 Avg Accuracy: 0.0 Nans: 0
+Epoch: 0 Batch: 500 Avg Loss: 0.09676826745271683 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 0 Batch: 1000 Avg Loss: 0.0936419740319252 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 0 Batch: 1500 Avg Loss: 0.09494529664516449 Avg Accuracy: 0.96875 Nans: 0
+Epoch: 0 Batch: 2000 Avg Loss: 0.09390848129987717 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 0 Batch: 2500 Avg Loss: 0.09493661671876907 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 3000 Avg Loss: 0.0953521728515625 Avg Accuracy: 0.96875 Nans: 0
+Epoch: 0 Batch: 3500 Avg Loss: 0.09500715881586075 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 4000 Avg Loss: 0.09467365592718124 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 4500 Avg Loss: 0.09501386433839798 Avg Accuracy: 0.75 Nans: 0
+Epoch: 0 Batch: 5000 Avg Loss: 0.09491359442472458 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 0 Batch: 5500 Avg Loss: 0.09451563656330109 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 0 Batch: 6000 Avg Loss: 0.09428673982620239 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 0 Batch: 6500 Avg Loss: 0.09387024492025375 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 7000 Avg Loss: 0.09583599120378494 Avg Accuracy: 0.875 Nans: 0
+Epoch: 0 Batch: 7500 Avg Loss: 0.09462320059537888 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 8000 Avg Loss: 0.09563194215297699 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 0 Batch: 8500 Avg Loss: 0.09461326152086258 Avg Accuracy: 0.875 Nans: 0
+Epoch: 0 Batch: 9000 Avg Loss: 0.09514372050762177 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 0 Batch: 9500 Avg Loss: 0.0981237143278122 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 0 Batch: 10000 Avg Loss: 0.09299132972955704 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 10500 Avg Loss: 0.09330400824546814 Avg Accuracy: 0.875 Nans: 0
+Epoch: 0 Batch: 11000 Avg Loss: 0.09162959456443787 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 0 Batch: 11500 Avg Loss: 0.09401670098304749 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 12000 Avg Loss: 0.09164298325777054 Avg Accuracy: 0.875 Nans: 0
+Epoch: 0 Batch: 12500 Avg Loss: 0.09203571826219559 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 0 Batch: 13000 Avg Loss: 0.09289863705635071 Avg Accuracy: 0.875 Nans: 0
+Epoch: 0 Batch: 13500 Avg Loss: 0.09365116059780121 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 0 Batch: 14000 Avg Loss: 0.09304248541593552 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 14500 Avg Loss: 0.09401886910200119 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 15000 Avg Loss: 0.09251000732183456 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 0 Batch: 15500 Avg Loss: 0.09531600773334503 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 16000 Avg Loss: 0.09233848005533218 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 0 Batch: 16500 Avg Loss: 0.0930110439658165 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 0 Batch: 17000 Avg Loss: 0.09251768887042999 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 0 Batch: 17500 Avg Loss: 0.09286931157112122 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 0 Batch: 18000 Avg Loss: 0.09457415342330933 Avg Accuracy: 0.875 Nans: 0
+
+Train average loss after epoch 0 is 0.09453786164522171
+Train average acc after epoch 0 is 0.8200955390930176
+
+Checkpoint saved.
+
+
+Test average loss after epoch 0 is 0.09431089460849762
+Test average accuracy after epoch 0 is 0.8195010423660278
+
+Margin is now 0.1.
+
+EPOCH 1 BEGINS
+Epoch: 1 Batch: 0 Avg Loss: 0.09224389493465424 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 1 Batch: 500 Avg Loss: 0.09478584676980972 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 1 Batch: 1000 Avg Loss: 0.09448718279600143 Avg Accuracy: 0.875 Nans: 0
+Epoch: 1 Batch: 1500 Avg Loss: 0.09654659777879715 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 1 Batch: 2000 Avg Loss: 0.09430143237113953 Avg Accuracy: 0.75 Nans: 0
+Epoch: 1 Batch: 2500 Avg Loss: 0.09569060802459717 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 1 Batch: 3000 Avg Loss: 0.0921657383441925 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 1 Batch: 3500 Avg Loss: 0.09543222934007645 Avg Accuracy: 0.75 Nans: 0
+Epoch: 1 Batch: 4000 Avg Loss: 0.09561209380626678 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 1 Batch: 4500 Avg Loss: 0.09412319958209991 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 1 Batch: 5000 Avg Loss: 0.09379951655864716 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 1 Batch: 5500 Avg Loss: 0.09385636448860168 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 1 Batch: 6000 Avg Loss: 0.09403524547815323 Avg Accuracy: 0.75 Nans: 0
+Epoch: 1 Batch: 6500 Avg Loss: 0.09571164846420288 Avg Accuracy: 0.875 Nans: 0
+Epoch: 1 Batch: 7000 Avg Loss: 0.0929277092218399 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 1 Batch: 7500 Avg Loss: 0.0925653874874115 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 1 Batch: 8000 Avg Loss: 0.09252779185771942 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 1 Batch: 8500 Avg Loss: 0.09268335998058319 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 1 Batch: 9000 Avg Loss: 0.09560266882181168 Avg Accuracy: 0.75 Nans: 0
+Epoch: 1 Batch: 9500 Avg Loss: 0.09382455050945282 Avg Accuracy: 0.875 Nans: 0
+Epoch: 1 Batch: 10000 Avg Loss: 0.09495282173156738 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 1 Batch: 10500 Avg Loss: 0.09602069854736328 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 1 Batch: 11000 Avg Loss: 0.09394697099924088 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 1 Batch: 11500 Avg Loss: 0.09222909063100815 Avg Accuracy: 0.875 Nans: 0
+Epoch: 1 Batch: 12000 Avg Loss: 0.09492598474025726 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 1 Batch: 12500 Avg Loss: 0.09376781433820724 Avg Accuracy: 0.875 Nans: 0
+Epoch: 1 Batch: 13000 Avg Loss: 0.09503041207790375 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 1 Batch: 13500 Avg Loss: 0.0947297140955925 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 1 Batch: 14000 Avg Loss: 0.09177307039499283 Avg Accuracy: 0.875 Nans: 0
+Epoch: 1 Batch: 14500 Avg Loss: 0.09291759878396988 Avg Accuracy: 0.875 Nans: 0
+Epoch: 1 Batch: 15000 Avg Loss: 0.09445066004991531 Avg Accuracy: 0.875 Nans: 0
+Epoch: 1 Batch: 15500 Avg Loss: 0.09235244989395142 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 1 Batch: 16000 Avg Loss: 0.09175468236207962 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 1 Batch: 16500 Avg Loss: 0.09506501257419586 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 1 Batch: 17000 Avg Loss: 0.09352488815784454 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 1 Batch: 17500 Avg Loss: 0.09467984735965729 Avg Accuracy: 0.875 Nans: 0
+Epoch: 1 Batch: 18000 Avg Loss: 0.09327851235866547 Avg Accuracy: 0.875 Nans: 0
+
+Train average loss after epoch 1 is 0.09407506883144379
+Train average acc after epoch 1 is 0.8281630873680115
+
+Checkpoint saved.
+
+
+Test average loss after epoch 1 is 0.0940314531326294
+Test average accuracy after epoch 1 is 0.8189413547515869
+
+Margin is now 0.2.
+
+EPOCH 2 BEGINS
+Epoch: 2 Batch: 0 Avg Loss: 0.09532491117715836 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 500 Avg Loss: 0.09394989907741547 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 1000 Avg Loss: 0.09473560750484467 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 2 Batch: 1500 Avg Loss: 0.09300059080123901 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 2 Batch: 2000 Avg Loss: 0.0945342630147934 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 2 Batch: 2500 Avg Loss: 0.09302721172571182 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 2 Batch: 3000 Avg Loss: 0.09353261440992355 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 2 Batch: 3500 Avg Loss: 0.09440688788890839 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 2 Batch: 4000 Avg Loss: 0.0972374752163887 Avg Accuracy: 0.75 Nans: 0
+Epoch: 2 Batch: 4500 Avg Loss: 0.09538201242685318 Avg Accuracy: 0.75 Nans: 0
+Epoch: 2 Batch: 5000 Avg Loss: 0.09389325976371765 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 2 Batch: 5500 Avg Loss: 0.09454812854528427 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 2 Batch: 6000 Avg Loss: 0.09442984312772751 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 2 Batch: 6500 Avg Loss: 0.09332604706287384 Avg Accuracy: 0.75 Nans: 0
+Epoch: 2 Batch: 7000 Avg Loss: 0.09432608634233475 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 2 Batch: 7500 Avg Loss: 0.09486208856105804 Avg Accuracy: 0.875 Nans: 0
+Epoch: 2 Batch: 8000 Avg Loss: 0.09316816926002502 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 2 Batch: 8500 Avg Loss: 0.09528131783008575 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 2 Batch: 9000 Avg Loss: 0.09303409606218338 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 2 Batch: 9500 Avg Loss: 0.09318054467439651 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 2 Batch: 10000 Avg Loss: 0.09391302615404129 Avg Accuracy: 0.875 Nans: 0
+Epoch: 2 Batch: 10500 Avg Loss: 0.09395641088485718 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 11000 Avg Loss: 0.09492573887109756 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 11500 Avg Loss: 0.09354090690612793 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 2 Batch: 12000 Avg Loss: 0.09608194231987 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 2 Batch: 12500 Avg Loss: 0.0951453447341919 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 13000 Avg Loss: 0.0938776433467865 Avg Accuracy: 0.875 Nans: 0
+Epoch: 2 Batch: 13500 Avg Loss: 0.09374941140413284 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 14000 Avg Loss: 0.09368248283863068 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 2 Batch: 14500 Avg Loss: 0.09334016591310501 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 15000 Avg Loss: 0.09331343322992325 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 15500 Avg Loss: 0.09088871628046036 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 2 Batch: 16000 Avg Loss: 0.09431818127632141 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 16500 Avg Loss: 0.09586426615715027 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 2 Batch: 17000 Avg Loss: 0.09250767529010773 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 2 Batch: 17500 Avg Loss: 0.09479046612977982 Avg Accuracy: 0.875 Nans: 0
+Epoch: 2 Batch: 18000 Avg Loss: 0.09242920577526093 Avg Accuracy: 0.875 Nans: 0
+
+Train average loss after epoch 2 is 0.09402578324079514
+Train average acc after epoch 2 is 0.8284385204315186
+
+Checkpoint saved.
+
+
+Test average loss after epoch 2 is 0.09416051208972931
+Test average accuracy after epoch 2 is 0.8252977728843689
+
+Margin is now 0.30000000000000004.
+
+EPOCH 3 BEGINS
+Epoch: 3 Batch: 0 Avg Loss: 0.09411484748125076 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 3 Batch: 500 Avg Loss: 0.0951974168419838 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 3 Batch: 1000 Avg Loss: 0.09691350162029266 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 3 Batch: 1500 Avg Loss: 0.09455400705337524 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 3 Batch: 2000 Avg Loss: 0.09438379108905792 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 3 Batch: 2500 Avg Loss: 0.09505892544984818 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 3 Batch: 3000 Avg Loss: 0.0943412035703659 Avg Accuracy: 0.75 Nans: 0
+Epoch: 3 Batch: 3500 Avg Loss: 0.0929374024271965 Avg Accuracy: 0.75 Nans: 0
+Epoch: 3 Batch: 4000 Avg Loss: 0.09320768713951111 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 3 Batch: 4500 Avg Loss: 0.09336059540510178 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 3 Batch: 5000 Avg Loss: 0.09149522334337234 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 3 Batch: 5500 Avg Loss: 0.09704448282718658 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 3 Batch: 6000 Avg Loss: 0.09328332543373108 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 3 Batch: 6500 Avg Loss: 0.0933675542473793 Avg Accuracy: 0.75 Nans: 0
+Epoch: 3 Batch: 7000 Avg Loss: 0.09408408403396606 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 3 Batch: 7500 Avg Loss: 0.09622488170862198 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 3 Batch: 8000 Avg Loss: 0.09705764055252075 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 3 Batch: 8500 Avg Loss: 0.09380672872066498 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 3 Batch: 9000 Avg Loss: 0.09468791633844376 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 3 Batch: 9500 Avg Loss: 0.09587544947862625 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 3 Batch: 10000 Avg Loss: 0.09273967146873474 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 3 Batch: 10500 Avg Loss: 0.09345473349094391 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 3 Batch: 11000 Avg Loss: 0.09537755697965622 Avg Accuracy: 0.875 Nans: 0
+Epoch: 3 Batch: 11500 Avg Loss: 0.09494050592184067 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 3 Batch: 12000 Avg Loss: 0.09509860724210739 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 3 Batch: 12500 Avg Loss: 0.09494972229003906 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 3 Batch: 13000 Avg Loss: 0.09400637447834015 Avg Accuracy: 0.75 Nans: 0
+Epoch: 3 Batch: 13500 Avg Loss: 0.09123911708593369 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 3 Batch: 14000 Avg Loss: 0.0954645648598671 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 3 Batch: 14500 Avg Loss: 0.09301435947418213 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 3 Batch: 15000 Avg Loss: 0.09313104301691055 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 3 Batch: 15500 Avg Loss: 0.09499906748533249 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 3 Batch: 16000 Avg Loss: 0.09293195605278015 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 3 Batch: 16500 Avg Loss: 0.09200023114681244 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 3 Batch: 17000 Avg Loss: 0.09394288063049316 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 3 Batch: 17500 Avg Loss: 0.09496939182281494 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 3 Batch: 18000 Avg Loss: 0.09412156045436859 Avg Accuracy: 0.8125 Nans: 0
+
+Train average loss after epoch 3 is 0.09394516795873642
+Train average acc after epoch 3 is 0.8287596106529236
+
+Checkpoint saved.
+
+
+Test average loss after epoch 3 is 0.09413984417915344
+Test average accuracy after epoch 3 is 0.8210601806640625
+
+Margin is now 0.4.
+
+EPOCH 4 BEGINS
+Epoch: 4 Batch: 0 Avg Loss: 0.09400387853384018 Avg Accuracy: 0.875 Nans: 0
+Epoch: 4 Batch: 500 Avg Loss: 0.09410355240106583 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 4 Batch: 1000 Avg Loss: 0.0942564383149147 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 4 Batch: 1500 Avg Loss: 0.0958382785320282 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 4 Batch: 2000 Avg Loss: 0.09284929931163788 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 4 Batch: 2500 Avg Loss: 0.09479190409183502 Avg Accuracy: 0.875 Nans: 0
+Epoch: 4 Batch: 3000 Avg Loss: 0.09398312866687775 Avg Accuracy: 0.875 Nans: 0
+Epoch: 4 Batch: 3500 Avg Loss: 0.09415781497955322 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 4 Batch: 4000 Avg Loss: 0.09340501576662064 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 4 Batch: 4500 Avg Loss: 0.09177940338850021 Avg Accuracy: 1.0 Nans: 0
+Epoch: 4 Batch: 5000 Avg Loss: 0.09545933455228806 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 4 Batch: 5500 Avg Loss: 0.0895288810133934 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 4 Batch: 6000 Avg Loss: 0.08979430049657822 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 4 Batch: 6500 Avg Loss: 0.09541311115026474 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 4 Batch: 7000 Avg Loss: 0.09429264068603516 Avg Accuracy: 0.75 Nans: 0
+Epoch: 4 Batch: 7500 Avg Loss: 0.09572833776473999 Avg Accuracy: 0.875 Nans: 0
+Epoch: 4 Batch: 8000 Avg Loss: 0.09157268702983856 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 4 Batch: 8500 Avg Loss: 0.09296123683452606 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 4 Batch: 9000 Avg Loss: 0.09423521906137466 Avg Accuracy: 0.875 Nans: 0
+Epoch: 4 Batch: 9500 Avg Loss: 0.08882097899913788 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 4 Batch: 10000 Avg Loss: 0.09394247084856033 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 4 Batch: 10500 Avg Loss: 0.09456511586904526 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 4 Batch: 11000 Avg Loss: 0.0988762229681015 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 4 Batch: 11500 Avg Loss: 0.09161379933357239 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 4 Batch: 12000 Avg Loss: 0.09420870244503021 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 4 Batch: 12500 Avg Loss: 0.09260732680559158 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 4 Batch: 13000 Avg Loss: 0.09518792480230331 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 4 Batch: 13500 Avg Loss: 0.09405858814716339 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 4 Batch: 14000 Avg Loss: 0.09376126527786255 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 4 Batch: 14500 Avg Loss: 0.09341982007026672 Avg Accuracy: 0.65625 Nans: 0
+Epoch: 4 Batch: 15000 Avg Loss: 0.09292283654212952 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 4 Batch: 15500 Avg Loss: 0.09340810775756836 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 4 Batch: 16000 Avg Loss: 0.09403780102729797 Avg Accuracy: 0.875 Nans: 0
+Epoch: 4 Batch: 16500 Avg Loss: 0.09287866950035095 Avg Accuracy: 0.75 Nans: 0
+Epoch: 4 Batch: 17000 Avg Loss: 0.0948021188378334 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 4 Batch: 17500 Avg Loss: 0.09182899445295334 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 4 Batch: 18000 Avg Loss: 0.09431519359350204 Avg Accuracy: 0.875 Nans: 0
+
+Train average loss after epoch 4 is 0.09385298192501068
+Train average acc after epoch 4 is 0.8292243480682373
+
+Checkpoint saved.
+
+
+Test average loss after epoch 4 is 0.09392114728689194
+Test average accuracy after epoch 4 is 0.8384504318237305
+
+Margin is now 0.5.
+
+EPOCH 5 BEGINS
+Epoch: 5 Batch: 0 Avg Loss: 0.09419834613800049 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 5 Batch: 500 Avg Loss: 0.09561237692832947 Avg Accuracy: 0.875 Nans: 0
+Epoch: 5 Batch: 1000 Avg Loss: 0.09313826262950897 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 5 Batch: 1500 Avg Loss: 0.09456724673509598 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 2000 Avg Loss: 0.09344200789928436 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 2500 Avg Loss: 0.09293398261070251 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 5 Batch: 3000 Avg Loss: 0.09418682008981705 Avg Accuracy: 0.75 Nans: 0
+Epoch: 5 Batch: 3500 Avg Loss: 0.09498660266399384 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 5 Batch: 4000 Avg Loss: 0.09500385820865631 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 5 Batch: 4500 Avg Loss: 0.09253986924886703 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 5000 Avg Loss: 0.09361525624990463 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 5 Batch: 5500 Avg Loss: 0.09399734437465668 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 6000 Avg Loss: 0.09285099804401398 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 6500 Avg Loss: 0.09360833466053009 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 5 Batch: 7000 Avg Loss: 0.09389402717351913 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 5 Batch: 7500 Avg Loss: 0.09382432699203491 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 8000 Avg Loss: 0.09233327955007553 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 8500 Avg Loss: 0.09391695261001587 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 5 Batch: 9000 Avg Loss: 0.09595921635627747 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 5 Batch: 9500 Avg Loss: 0.09282306581735611 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 10000 Avg Loss: 0.09491001814603806 Avg Accuracy: 0.96875 Nans: 0
+Epoch: 5 Batch: 10500 Avg Loss: 0.09482590854167938 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 5 Batch: 11000 Avg Loss: 0.09359229356050491 Avg Accuracy: 0.875 Nans: 0
+Epoch: 5 Batch: 11500 Avg Loss: 0.09365028142929077 Avg Accuracy: 0.875 Nans: 0
+Epoch: 5 Batch: 12000 Avg Loss: 0.0942903384566307 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 5 Batch: 12500 Avg Loss: 0.09549563378095627 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 13000 Avg Loss: 0.09383917599916458 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 5 Batch: 13500 Avg Loss: 0.09554708003997803 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 14000 Avg Loss: 0.09333379566669464 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 5 Batch: 14500 Avg Loss: 0.09182850271463394 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 5 Batch: 15000 Avg Loss: 0.09583988040685654 Avg Accuracy: 0.875 Nans: 0
+Epoch: 5 Batch: 15500 Avg Loss: 0.09525090456008911 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 5 Batch: 16000 Avg Loss: 0.09442296624183655 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 5 Batch: 16500 Avg Loss: 0.09492403268814087 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 5 Batch: 17000 Avg Loss: 0.09437494724988937 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 5 Batch: 17500 Avg Loss: 0.09400323033332825 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 5 Batch: 18000 Avg Loss: 0.09235363453626633 Avg Accuracy: 0.78125 Nans: 0
+
+Train average loss after epoch 5 is 0.09382180124521255
+Train average acc after epoch 5 is 0.8289252519607544
+
+Checkpoint saved.
+
+
+Test average loss after epoch 5 is 0.09384210407733917
+Test average accuracy after epoch 5 is 0.8288558125495911
+
+Margin is now 0.6.
+
+EPOCH 6 BEGINS
+Epoch: 6 Batch: 0 Avg Loss: 0.0940113514661789 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 6 Batch: 500 Avg Loss: 0.09264730662107468 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 6 Batch: 1000 Avg Loss: 0.09298373013734818 Avg Accuracy: 0.875 Nans: 0
+Epoch: 6 Batch: 1500 Avg Loss: 0.0934038832783699 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 6 Batch: 2000 Avg Loss: 0.09473315626382828 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 2500 Avg Loss: 0.09343034774065018 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 6 Batch: 3000 Avg Loss: 0.0946684330701828 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 3500 Avg Loss: 0.09384314715862274 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 4000 Avg Loss: 0.09231138229370117 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 4500 Avg Loss: 0.09432084858417511 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 5000 Avg Loss: 0.09228450059890747 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 6 Batch: 5500 Avg Loss: 0.09490475058555603 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 6 Batch: 6000 Avg Loss: 0.09174253046512604 Avg Accuracy: 0.75 Nans: 0
+Epoch: 6 Batch: 6500 Avg Loss: 0.09583468735218048 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 6 Batch: 7000 Avg Loss: 0.09625700861215591 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 7500 Avg Loss: 0.0955936387181282 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 6 Batch: 8000 Avg Loss: 0.09356862306594849 Avg Accuracy: 0.96875 Nans: 0
+Epoch: 6 Batch: 8500 Avg Loss: 0.09278777241706848 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 6 Batch: 9000 Avg Loss: 0.09393234550952911 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 6 Batch: 9500 Avg Loss: 0.09541759639978409 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 6 Batch: 10000 Avg Loss: 0.09311710298061371 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 6 Batch: 10500 Avg Loss: 0.09616979956626892 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 6 Batch: 11000 Avg Loss: 0.09486335515975952 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 6 Batch: 11500 Avg Loss: 0.09495759010314941 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 6 Batch: 12000 Avg Loss: 0.09389183670282364 Avg Accuracy: 0.875 Nans: 0
+Epoch: 6 Batch: 12500 Avg Loss: 0.09530635923147202 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 6 Batch: 13000 Avg Loss: 0.0947817787528038 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 13500 Avg Loss: 0.09484826773405075 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 6 Batch: 14000 Avg Loss: 0.09191111475229263 Avg Accuracy: 0.875 Nans: 0
+Epoch: 6 Batch: 14500 Avg Loss: 0.09342454373836517 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 6 Batch: 15000 Avg Loss: 0.09268496930599213 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 15500 Avg Loss: 0.09351027011871338 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 16000 Avg Loss: 0.09438855946063995 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 6 Batch: 16500 Avg Loss: 0.09284891188144684 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 6 Batch: 17000 Avg Loss: 0.09418139606714249 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 6 Batch: 17500 Avg Loss: 0.09040900319814682 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 6 Batch: 18000 Avg Loss: 0.0932413786649704 Avg Accuracy: 0.9375 Nans: 0
+
+Train average loss after epoch 6 is 0.09380187839269638
+Train average acc after epoch 6 is 0.8289877772331238
+
+Checkpoint saved.
+
+
+Test average loss after epoch 6 is 0.09414072334766388
+Test average accuracy after epoch 6 is 0.8296153545379639
+
+Margin is now 0.7.
+
+EPOCH 7 BEGINS
+Epoch: 7 Batch: 0 Avg Loss: 0.09336461126804352 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 7 Batch: 500 Avg Loss: 0.09254609793424606 Avg Accuracy: 0.75 Nans: 0
+Epoch: 7 Batch: 1000 Avg Loss: 0.092697374522686 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 7 Batch: 1500 Avg Loss: 0.09524546563625336 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 7 Batch: 2000 Avg Loss: 0.0940859392285347 Avg Accuracy: 0.75 Nans: 0
+Epoch: 7 Batch: 2500 Avg Loss: 0.09461282938718796 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 7 Batch: 3000 Avg Loss: 0.09417194128036499 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 7 Batch: 3500 Avg Loss: 0.09382998943328857 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 7 Batch: 4000 Avg Loss: 0.0946994498372078 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 7 Batch: 4500 Avg Loss: 0.0931435152888298 Avg Accuracy: 0.875 Nans: 0
+Epoch: 7 Batch: 5000 Avg Loss: 0.09111090004444122 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 7 Batch: 5500 Avg Loss: 0.09592556208372116 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 7 Batch: 6000 Avg Loss: 0.09332692623138428 Avg Accuracy: 0.75 Nans: 0
+Epoch: 7 Batch: 6500 Avg Loss: 0.09206759184598923 Avg Accuracy: 0.875 Nans: 0
+Epoch: 7 Batch: 7000 Avg Loss: 0.096623495221138 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 7 Batch: 7500 Avg Loss: 0.0948803648352623 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 7 Batch: 8000 Avg Loss: 0.09430209547281265 Avg Accuracy: 0.875 Nans: 0
+Epoch: 7 Batch: 8500 Avg Loss: 0.09454955905675888 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 7 Batch: 9000 Avg Loss: 0.09393054246902466 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 7 Batch: 9500 Avg Loss: 0.09280546009540558 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 7 Batch: 10000 Avg Loss: 0.09175080060958862 Avg Accuracy: 0.875 Nans: 0
+Epoch: 7 Batch: 10500 Avg Loss: 0.09523622691631317 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 7 Batch: 11000 Avg Loss: 0.09209080785512924 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 7 Batch: 11500 Avg Loss: 0.09281507879495621 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 7 Batch: 12000 Avg Loss: 0.09648572653532028 Avg Accuracy: 0.75 Nans: 0
+Epoch: 7 Batch: 12500 Avg Loss: 0.09372401237487793 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 7 Batch: 13000 Avg Loss: 0.0949123203754425 Avg Accuracy: 0.875 Nans: 0
+Epoch: 7 Batch: 13500 Avg Loss: 0.09248415380716324 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 7 Batch: 14000 Avg Loss: 0.09344301372766495 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 7 Batch: 14500 Avg Loss: 0.09305953234434128 Avg Accuracy: 0.875 Nans: 0
+Epoch: 7 Batch: 15000 Avg Loss: 0.09545547515153885 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 7 Batch: 15500 Avg Loss: 0.0944366529583931 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 7 Batch: 16000 Avg Loss: 0.0938483476638794 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 7 Batch: 16500 Avg Loss: 0.09315834194421768 Avg Accuracy: 0.75 Nans: 0
+Epoch: 7 Batch: 17000 Avg Loss: 0.09441553056240082 Avg Accuracy: 0.875 Nans: 0
+Epoch: 7 Batch: 17500 Avg Loss: 0.0947209969162941 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 7 Batch: 18000 Avg Loss: 0.0936274379491806 Avg Accuracy: 0.78125 Nans: 0
+
+Train average loss after epoch 7 is 0.09381052851676941
+Train average acc after epoch 7 is 0.8292564749717712
+
+Checkpoint saved.
+
+
+Test average loss after epoch 7 is 0.09389113634824753
+Test average accuracy after epoch 7 is 0.8233388662338257
+
+Margin is now 0.7999999999999999.
+
+EPOCH 8 BEGINS
+Epoch: 8 Batch: 0 Avg Loss: 0.095171719789505 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 8 Batch: 500 Avg Loss: 0.09610428661108017 Avg Accuracy: 0.875 Nans: 0
+Epoch: 8 Batch: 1000 Avg Loss: 0.09335073083639145 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 8 Batch: 1500 Avg Loss: 0.09549985826015472 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 8 Batch: 2000 Avg Loss: 0.09232204407453537 Avg Accuracy: 0.875 Nans: 0
+Epoch: 8 Batch: 2500 Avg Loss: 0.09476754814386368 Avg Accuracy: 0.875 Nans: 0
+Epoch: 8 Batch: 3000 Avg Loss: 0.09283392876386642 Avg Accuracy: 0.96875 Nans: 0
+Epoch: 8 Batch: 3500 Avg Loss: 0.09196440130472183 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 4000 Avg Loss: 0.09373581409454346 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 8 Batch: 4500 Avg Loss: 0.09276051819324493 Avg Accuracy: 0.75 Nans: 0
+Epoch: 8 Batch: 5000 Avg Loss: 0.0920364037156105 Avg Accuracy: 0.875 Nans: 0
+Epoch: 8 Batch: 5500 Avg Loss: 0.09332346171140671 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 6000 Avg Loss: 0.09469526261091232 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 8 Batch: 6500 Avg Loss: 0.09334927052259445 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 7000 Avg Loss: 0.09583768248558044 Avg Accuracy: 0.625 Nans: 0
+Epoch: 8 Batch: 7500 Avg Loss: 0.09436231106519699 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 8 Batch: 8000 Avg Loss: 0.09019546955823898 Avg Accuracy: 0.875 Nans: 0
+Epoch: 8 Batch: 8500 Avg Loss: 0.09164591878652573 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 9000 Avg Loss: 0.09254156798124313 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 9500 Avg Loss: 0.09280557185411453 Avg Accuracy: 0.875 Nans: 0
+Epoch: 8 Batch: 10000 Avg Loss: 0.0954795852303505 Avg Accuracy: 0.75 Nans: 0
+Epoch: 8 Batch: 10500 Avg Loss: 0.09285610914230347 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 8 Batch: 11000 Avg Loss: 0.09341835975646973 Avg Accuracy: 0.875 Nans: 0
+Epoch: 8 Batch: 11500 Avg Loss: 0.09404295682907104 Avg Accuracy: 0.96875 Nans: 0
+Epoch: 8 Batch: 12000 Avg Loss: 0.09718963503837585 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 8 Batch: 12500 Avg Loss: 0.09474137425422668 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 13000 Avg Loss: 0.09566216170787811 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 8 Batch: 13500 Avg Loss: 0.09567779302597046 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 14000 Avg Loss: 0.09538217633962631 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 14500 Avg Loss: 0.09378936141729355 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 8 Batch: 15000 Avg Loss: 0.09409123659133911 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 8 Batch: 15500 Avg Loss: 0.0939270630478859 Avg Accuracy: 0.875 Nans: 0
+Epoch: 8 Batch: 16000 Avg Loss: 0.09468617290258408 Avg Accuracy: 0.875 Nans: 0
+Epoch: 8 Batch: 16500 Avg Loss: 0.09517988562583923 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 17000 Avg Loss: 0.09130112826824188 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 8 Batch: 17500 Avg Loss: 0.09190452843904495 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 8 Batch: 18000 Avg Loss: 0.09414114058017731 Avg Accuracy: 0.84375 Nans: 0
+
+Train average loss after epoch 8 is 0.09424430876970291
+Train average acc after epoch 8 is 0.8261014223098755
+
+Checkpoint saved.
+
+
+Test average loss after epoch 8 is 0.09440775215625763
+Test average accuracy after epoch 8 is 0.8235387802124023
+
+Margin is now 0.8999999999999999.
+
+EPOCH 9 BEGINS
+Epoch: 9 Batch: 0 Avg Loss: 0.09594299644231796 Avg Accuracy: 0.75 Nans: 0
+Epoch: 9 Batch: 500 Avg Loss: 0.09370797127485275 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 9 Batch: 1000 Avg Loss: 0.09519098699092865 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 9 Batch: 1500 Avg Loss: 0.09756305068731308 Avg Accuracy: 0.875 Nans: 0
+Epoch: 9 Batch: 2000 Avg Loss: 0.0955604761838913 Avg Accuracy: 0.875 Nans: 0
+Epoch: 9 Batch: 2500 Avg Loss: 0.09911810606718063 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 9 Batch: 3000 Avg Loss: 0.09590505063533783 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 3500 Avg Loss: 0.09433864802122116 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 9 Batch: 4000 Avg Loss: 0.09503968060016632 Avg Accuracy: 0.75 Nans: 0
+Epoch: 9 Batch: 4500 Avg Loss: 0.09474143385887146 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 9 Batch: 5000 Avg Loss: 0.09657645225524902 Avg Accuracy: 0.75 Nans: 0
+Epoch: 9 Batch: 5500 Avg Loss: 0.0957079827785492 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 6000 Avg Loss: 0.09778960794210434 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 9 Batch: 6500 Avg Loss: 0.09701412171125412 Avg Accuracy: 0.75 Nans: 0
+Epoch: 9 Batch: 7000 Avg Loss: 0.09544443339109421 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 7500 Avg Loss: 0.09649895131587982 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 9 Batch: 8000 Avg Loss: 0.09706363826990128 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 8500 Avg Loss: 0.09619396924972534 Avg Accuracy: 0.65625 Nans: 0
+Epoch: 9 Batch: 9000 Avg Loss: 0.0953744426369667 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 9 Batch: 9500 Avg Loss: 0.0965854823589325 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 10000 Avg Loss: 0.09652689844369888 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 9 Batch: 10500 Avg Loss: 0.09377345442771912 Avg Accuracy: 0.75 Nans: 0
+Epoch: 9 Batch: 11000 Avg Loss: 0.09506438672542572 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 11500 Avg Loss: 0.0966297909617424 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 12000 Avg Loss: 0.09553781151771545 Avg Accuracy: 0.75 Nans: 0
+Epoch: 9 Batch: 12500 Avg Loss: 0.09589168429374695 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 9 Batch: 13000 Avg Loss: 0.09683337807655334 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 9 Batch: 13500 Avg Loss: 0.09542189538478851 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 14000 Avg Loss: 0.09670717269182205 Avg Accuracy: 0.875 Nans: 0
+Epoch: 9 Batch: 14500 Avg Loss: 0.09623156487941742 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 9 Batch: 15000 Avg Loss: 0.09469334781169891 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 15500 Avg Loss: 0.0944008156657219 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 9 Batch: 16000 Avg Loss: 0.09690273553133011 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 16500 Avg Loss: 0.09217950701713562 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 9 Batch: 17000 Avg Loss: 0.09696394950151443 Avg Accuracy: 0.90625 Nans: 0
+Epoch: 9 Batch: 17500 Avg Loss: 0.09601148217916489 Avg Accuracy: 0.84375 Nans: 0
+Epoch: 9 Batch: 18000 Avg Loss: 0.09564144164323807 Avg Accuracy: 0.90625 Nans: 0
+
+Train average loss after epoch 9 is 0.09566733986139297
+Train average acc after epoch 9 is 0.8162391781806946
+
+Checkpoint saved.
+
+
+Test average loss after epoch 9 is 0.09577041119337082
+Test average accuracy after epoch 9 is 0.8151834607124329
+
+Margin is now 0.9999999999999999.
+
+EPOCH 10 BEGINS
+Epoch: 10 Batch: 0 Avg Loss: 0.09969643503427505 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 10 Batch: 500 Avg Loss: 0.09688948094844818 Avg Accuracy: 0.9375 Nans: 0
+Epoch: 10 Batch: 1000 Avg Loss: 0.0989893227815628 Avg Accuracy: 0.75 Nans: 0
+Epoch: 10 Batch: 1500 Avg Loss: 0.09606550633907318 Avg Accuracy: 0.875 Nans: 0
+Epoch: 10 Batch: 2000 Avg Loss: 0.09774775058031082 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 10 Batch: 2500 Avg Loss: 0.09673923254013062 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 10 Batch: 3000 Avg Loss: 0.09964442998170853 Avg Accuracy: 0.75 Nans: 0
+Epoch: 10 Batch: 3500 Avg Loss: 0.09850373864173889 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 10 Batch: 4000 Avg Loss: 0.09870569407939911 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 10 Batch: 4500 Avg Loss: 0.09871122986078262 Avg Accuracy: 0.78125 Nans: 0
+Epoch: 10 Batch: 5000 Avg Loss: 0.0945698618888855 Avg Accuracy: 0.8125 Nans: 0
+Epoch: 10 Batch: 5500 Avg Loss: 0.09836786240339279 Avg Accuracy: 0.6875 Nans: 0
+Epoch: 10 Batch: 6000 Avg Loss: 0.0991431176662445 Avg Accuracy: 0.71875 Nans: 0
+Epoch: 10 Batch: 6500 Avg Loss: 0.0983881875872612 Avg Accuracy: 0.875 Nans: 0
