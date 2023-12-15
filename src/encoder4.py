@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 class AttentionAligner4(nn.Module):
-    def __init__(self, clip_embed, d_model=96):
+    def __init__(self, clip_embed, d_model=1):
         super().__init__()
 
         self.linear = nn.Linear(512, 512)
@@ -14,8 +14,6 @@ class AttentionAligner4(nn.Module):
 
 
     def forward(self, x):
-        return self.linear(x)
-    
         x.unsqueeze_(-1)
 
         # B, T, C
@@ -27,13 +25,13 @@ class AttentionAligner4(nn.Module):
         # B, 512, d_model 
         x = self.ff1(x)
 
-        # # B, 512, d_model
-        # pos_emb = self.pos_emb(torch.arange(T, device="cuda"))
+        # B, 512, d_model
+        pos_emb = self.pos_emb(torch.arange(T, device="cuda"))
 
-        # # B, 512, d_model
-        # x = x + pos_emb
+        # B, 512, d_model
+        x = x + pos_emb
 
-        # x = self.transformer_encoder(x)
+        x = self.transformer_encoder(x)
 
         logits = self.ff2(x).squeeze(-1)
 
