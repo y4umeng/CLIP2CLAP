@@ -5,6 +5,7 @@ class AttentionAligner4(nn.Module):
     def __init__(self, clip_embed, d_model=96):
         super().__init__()
 
+        self.linear = nn.Linear(512, 512)
         self.ff1 = nn.Linear(1, d_model)
         self.ff2 = nn.Linear(d_model, 1)
         self.pos_emb = nn.Embedding(clip_embed, d_model)
@@ -13,7 +14,7 @@ class AttentionAligner4(nn.Module):
 
 
     def forward(self, x):
-        return nn.Linear(512, 512)(x)
+        return self.linear(x)
     
         x.unsqueeze_(-1)
 
