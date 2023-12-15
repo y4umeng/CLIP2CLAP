@@ -4,6 +4,7 @@ import torch.nn as nn
 import open_clip
 from diffusers import AudioLDMPipeline
 import json
+import csv
 
 CLIP = 0
 CLAP = 0
@@ -28,7 +29,27 @@ def get_models():
     
     return CLIP, CLAP, TOKENIZER
 
-def get_data():
+def get_data_gcc():
+    # Google Conceptual Captions
+    train_data = []
+    with open("Train-GCC.tsv") as file:
+        tsv_file = csv.reader(file, delimiter="\t")
+        # printing data line by line
+        for line in tsv_file:
+            train_data.append(line)
+        train_data = [d[0] for d in train_data]
+
+    test_data = []
+    with open("Validation-GCC.tsv") as file:
+        tsv_file = csv.reader(file, delimiter="\t")
+        # printing data line by line
+        for line in tsv_file:
+            test_data.append(line)
+        test_data = [d[0] for d in test_data]
+
+    return train_data, test_data
+
+def get_data_coco():
     train_file = open('../data/captions_train2017.json')
     train_data = json.load(train_file)
     train_data = [d["caption"] for d in train_data["annotations"]]

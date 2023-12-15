@@ -5,13 +5,14 @@ from torchvision.transforms import ToTensor, transforms
 import torch.nn as nn
 import open_clip
 from diffusers import AudioLDMPipeline
-from data import get_models, get_data, get_embeds, EmbeddingsDataset
+from data import get_models, get_data_gcc, get_embeds, EmbeddingsDataset
 from contrastive_train import train_contrastive_model
 from linear import LinearAligner
 from linear2 import LinearAligner2
+from linear3 import LinearAligner3
 def train():
     _, _, _ = get_models()
-    train_data, test_data = get_data()
+    train_data, test_data = get_data_gcc()
     train_dataset = EmbeddingsDataset(train_data)
     test_dataset = EmbeddingsDataset(test_data)
     print(f"Length of test data: {len(test_dataset)}")
@@ -36,7 +37,7 @@ def train():
     train_dl = DataLoader(train_dataset, batch_size, shuffle=True)
     test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
 
-    model = LinearAligner2(clip_embed_dim, clap_embed_dim)
+    model = LinearAligner3(clip_embed_dim, clap_embed_dim)
     model.to(device)
     model = nn.DataParallel(model)
     # checkpoint = torch.load("../checkpoints/linear_contrastive_euclid_512_epoch_5.pt")
@@ -49,6 +50,6 @@ def train():
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
-    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear2_contrastive_euclid_512", 0)
+    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear3_contrastive_euclid_512", 0)
 
 train()

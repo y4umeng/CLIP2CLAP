@@ -5,13 +5,13 @@ from torchvision.transforms import ToTensor, transforms
 import torch.nn as nn
 import open_clip
 from diffusers import AudioLDMPipeline
-from data import get_models, get_data, get_embeds, EmbeddingsDataset
+from data import get_models, get_data_gcc, get_embeds, EmbeddingsDataset
 from contrastive_train import train_contrastive_model
 from encoder4 import AttentionAligner4
 
 def train():
     _, _, _ = get_models()
-    train_data, test_data = get_data()
+    train_data, test_data = get_data_gcc()
     train_dataset = EmbeddingsDataset(train_data)
     test_dataset = EmbeddingsDataset(test_data)
     print(f"Length of test data: {len(test_dataset)}")
