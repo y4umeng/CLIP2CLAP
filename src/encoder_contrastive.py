@@ -8,6 +8,7 @@ from diffusers import AudioLDMPipeline
 from data import get_models, get_data_gcc, get_embeds, EmbeddingsDataset
 from contrastive_train import train_contrastive_model
 from encoder4 import AttentionAligner4
+from linear3 import LinearAligner3
 
 def train():
     _, _, _ = get_models()
@@ -36,7 +37,8 @@ def train():
     train_dl = DataLoader(train_dataset, batch_size, shuffle=True)
     test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
 
-    model = AttentionAligner4(clip_embed_dim)
+    # model = AttentionAligner4(clip_embed_dim)
+    model = LinearAligner3(clip_embed_dim, clap_embed_dim)
     model.to(device)
     model = nn.DataParallel(model)
     # checkpoint = torch.load("../checkpoints/linear_contrastive_loss_epoch_8.pt")

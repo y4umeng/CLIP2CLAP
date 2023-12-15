@@ -47,6 +47,9 @@ def get_data_gcc():
             test_data.append(line)
         test_data = [d[0] for d in test_data]
 
+    print(f"Train data head: {train_data[:5]}")
+    print(f"Test data head: {test_data[:5]}")
+
     return train_data, test_data
 
 def get_data_coco():
