@@ -13,6 +13,8 @@ class AttentionAligner4(nn.Module):
 
 
     def forward(self, x):
+        return nn.Linear(512, 512)(x)
+    
         x.unsqueeze_(-1)
 
         # B, T, C
@@ -30,7 +32,7 @@ class AttentionAligner4(nn.Module):
         # # B, 512, d_model
         # x = x + pos_emb
 
-        x = self.transformer_encoder(x)
+        # x = self.transformer_encoder(x)
 
         logits = self.ff2(x).squeeze(-1)
 
