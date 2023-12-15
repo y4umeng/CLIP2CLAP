@@ -37,8 +37,8 @@ def train():
     train_dl = DataLoader(train_dataset, batch_size, shuffle=True)
     test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
 
-    # model = AttentionAligner4(clip_embed_dim)
-    model = LinearAligner3(clip_embed_dim, clap_embed_dim)
+    model = AttentionAligner4(clip_embed_dim)
+
     model.to(device)
     model = nn.DataParallel(model)
     # checkpoint = torch.load("../checkpoints/linear_contrastive_loss_epoch_8.pt")

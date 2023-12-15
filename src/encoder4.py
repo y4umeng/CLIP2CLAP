@@ -33,6 +33,8 @@ class AttentionAligner4(nn.Module):
         x = self.transformer_encoder(x)
 
         logits = self.ff2(x).squeeze(-1)
+
+        print(logits.shape)
         
         return logits
 
