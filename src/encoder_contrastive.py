@@ -49,6 +49,6 @@ def train():
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
-    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "encoder_contrastive_512")
+    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "encoder_contrastive_512", 0)
 
 train()
