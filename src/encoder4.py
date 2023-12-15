@@ -21,14 +21,14 @@ class AttentionAligner4(nn.Module):
         assert(T == 512)
         assert(C == 1)
 
-        # B, 512, 1 
+        # B, 512, d_model 
         x = self.ff1(x)
 
-        # B, 512, d_model
-        pos_emb = self.pos_emb(torch.arange(T, device="cuda"))
+        # # B, 512, d_model
+        # pos_emb = self.pos_emb(torch.arange(T, device="cuda"))
 
-        # B, 512, d_model
-        x = x + pos_emb
+        # # B, 512, d_model
+        # x = x + pos_emb
 
         x = self.transformer_encoder(x)
 
