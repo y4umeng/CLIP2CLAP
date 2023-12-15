@@ -32,7 +32,7 @@ def get_models():
 def get_data_gcc():
     # Google Conceptual Captions
     train_data = []
-    with open("Train-GCC.tsv") as file:
+    with open("../data/Train-GCC.tsv") as file:
         tsv_file = csv.reader(file, delimiter="\t")
         # printing data line by line
         for line in tsv_file:
@@ -40,7 +40,7 @@ def get_data_gcc():
         train_data = [d[0] for d in train_data]
 
     test_data = []
-    with open("Validation-GCC.tsv") as file:
+    with open("../data/Validation-GCC.tsv") as file:
         tsv_file = csv.reader(file, delimiter="\t")
         # printing data line by line
         for line in tsv_file:
