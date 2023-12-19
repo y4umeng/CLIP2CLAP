@@ -10,6 +10,7 @@ from contrastive_train import train_contrastive_model
 from linear import LinearAligner
 from linear2 import LinearAligner2
 from linear3 import LinearAligner3
+from linear4 import LinearAligner4
 def train():
     _, _, _ = get_models()
     train_data, test_data = get_data_gcc()
@@ -38,6 +39,8 @@ def train():
     test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
 
     model = LinearAligner3(clip_embed_dim, clap_embed_dim)
+    model_name = "linear4_cos_sim_512"
+    print(f"Model Name: {model_name}")
     model.to(device)
     model = nn.DataParallel(model)
     # checkpoint = torch.load("../checkpoints/linear_contrastive_euclid_512_epoch_5.pt")
@@ -50,6 +53,7 @@ def train():
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR)
 
-    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, "linear3_contrastive_euclid_512", 0)
+    train_contrastive_model(train_dl, test_dl, model, optimizer, None, EPOCHS, model_name, 0)
+
 
 train()

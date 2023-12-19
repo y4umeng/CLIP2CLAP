@@ -5,27 +5,23 @@ from torchvision.transforms import ToTensor, transforms
 import torch.nn as nn
 from torchmetrics import Accuracy
 
-def calc_loss_cos_similarity(pred, yb, t):
+def calc_loss_cos_similarity(pred, yb, t, accuracy, margin):
   logits = torch.mm(pred, torch.t(yb)) * torch.exp(t)
   labels = torch.arange(yb.shape[0]).to("cuda")
   loss_1 = nn.CrossEntropyLoss()(logits, labels)
+  accuracy_1 = accuracy(logits, labels)
   torch.t(logits)
   loss_2 = nn.CrossEntropyLoss()(logits, labels)
-  return (loss_1 + loss_2)/2
+  accuracy_2 = accuracy(logits, labels)
+  return (loss_1 + loss_2)/2, (accuracy_1 + accuracy_2)/2
 
 def calc_loss_euclid(pred, yb, accuracy, margin):
   # calculate distance metric
   logits = torch.cdist(pred, yb, p=2)
   logits = torch.pow(logits, -1)
 
-  # print(f"Logit mean: {torch.mean(logits)}")
-  # print(f"Logit min: {torch.min(logits)}")
-  
   # apply margin
   logits = nn.ReLU()(logits - margin) 
-
-  # print(f"Logit mean: {torch.mean(logits)}")
-  # print(f"Logit min: {torch.min(logits)}")
   
   # do cross entropy along both axes
   labels = torch.arange(yb.shape[0]).to("cuda")
@@ -55,7 +51,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
-      loss, acc = calc_loss_euclid(pred, yb, accuracy, margin)
+      loss, acc = calc_loss_cos_similarity(pred, yb, accuracy, margin)
 
       if torch.isnan(loss):
         nans += 1
@@ -91,7 +87,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
-      loss, acc = calc_loss_euclid(pred, yb, accuracy, margin)
+      loss, acc = calc_loss_cos_similarity(pred, yb, accuracy, margin)
 
       test_loss += loss
       test_acc += acc * batch_size
@@ -101,5 +97,5 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
     print(f"Test average accuracy after epoch {epoch} is {test_acc/num_data_points}\n")
 
     if margin < 1.0:
-      margin += 0.1
+      margin += 0.05
     print(f"Margin is now {margin}.\n")
