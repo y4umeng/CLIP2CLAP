@@ -67,7 +67,7 @@ def get_embeds(data):
 
   with torch.no_grad(), torch.cuda.amp.autocast():
     clip_embeds = CLIP.encode_text(clip_tokens).to("cuda")
-    # nn.functional.normalize(clip_embeds, p=2, dim=1)
+    nn.functional.normalize(clip_embeds, p=2, dim=1)
 
     clap_embeds = CLAP._encode_prompt(
         prompt = data,
