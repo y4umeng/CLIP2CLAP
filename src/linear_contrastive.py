@@ -38,7 +38,7 @@ def train():
     train_dl = DataLoader(train_dataset, batch_size, shuffle=True)
     test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
 
-    model = LinearAligner3(clip_embed_dim, clap_embed_dim)
+    model = LinearAligner4(clip_embed_dim, clap_embed_dim)
     model_name = "linear4_cos_sim_512"
     print(f"Model Name: {model_name}")
     model.to(device)
