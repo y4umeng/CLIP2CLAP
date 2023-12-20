@@ -13,7 +13,7 @@ class LinearAligner4(nn.Module):
     self.ln3 = nn.LayerNorm([512])
     self.ff4 = nn.Linear(clap_embed_dim, clap_embed_dim)
     self.ln4 = nn.LayerNorm([512])
-    self.t = nn.Parameter(torch.tensor([1]))
+    self.t = nn.Parameter(torch.tensor([1]).float())
 
   def forward(self, x):
     x = self.ff1(x)
