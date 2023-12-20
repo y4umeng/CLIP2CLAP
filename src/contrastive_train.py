@@ -5,7 +5,7 @@ from torchvision.transforms import ToTensor, transforms
 import torch.nn as nn
 from torchmetrics import Accuracy
 
-def calc_loss_cos_similarity(pred, yb, t, accuracy, margin):
+def calc_loss_cos_similarity(pred, yb, t, accuracy):
   logits = torch.mm(pred, torch.t(yb)) * torch.exp(t)
   labels = torch.arange(yb.shape[0]).to("cuda")
   loss_1 = nn.CrossEntropyLoss()(logits, labels)
@@ -51,7 +51,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
-      loss, acc = calc_loss_cos_similarity(pred, yb, accuracy, margin)
+      loss, acc = calc_loss_cos_similarity(pred, yb, model.t, accuracy)
 
       if torch.isnan(loss):
         nans += 1
@@ -87,7 +87,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
-      loss, acc = calc_loss_cos_similarity(pred, yb, accuracy, margin)
+      loss, acc = calc_loss_cos_similarity(pred, yb, model.t, accuracy)
 
       test_loss += loss
       test_acc += acc * batch_size
