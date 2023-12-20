@@ -51,7 +51,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
-      loss, acc = calc_loss_cos_similarity(pred, yb, model.t, accuracy)
+      loss, acc = calc_loss_cos_similarity(pred, yb, model.module.t, accuracy)
 
       if torch.isnan(loss):
         nans += 1
@@ -87,7 +87,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
-      loss, acc = calc_loss_cos_similarity(pred, yb, model.t, accuracy)
+      loss, acc = calc_loss_cos_similarity(pred, yb, model.module.t, accuracy)
 
       test_loss += loss
       test_acc += acc * batch_size
