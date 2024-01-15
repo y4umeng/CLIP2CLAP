@@ -51,7 +51,8 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
 
       # contrastive loss
       accuracy = Accuracy(task="multiclass", num_classes=batch_size).to('cuda')
-      loss, acc = calc_loss_cos_similarity(pred, yb, model.module.t, accuracy)
+      # loss, acc = calc_loss_cos_similarity(pred, yb, model.module.t, accuracy)
+      loss, acc = calc_loss_euclid(pred, yb, accuracy, margin)
 
       if torch.isnan(loss):
         nans += 1
@@ -64,7 +65,7 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
       train_acc += acc * batch_size
       num_data_points += batch_size
 
-      if num_batch % 500 == 0:
+      if num_batch % 1 == 0:
         print(f"Epoch: {epoch} Batch: {num_batch} Avg Loss: {loss/batch_size} Avg Accuracy: {acc} Nans: {nans} Temp: {model.module.t.item()}")
 
       num_batch += 1
@@ -97,5 +98,5 @@ def train_contrastive_model(train_dl, test_dl, model, optimizer, scheduler, num_
     print(f"Test average accuracy after epoch {epoch} is {test_acc/num_data_points}\n")
 
     if margin < 1.0:
-      margin += 0.05
+      margin += 0.03
     print(f"Margin is now {margin}.\n")

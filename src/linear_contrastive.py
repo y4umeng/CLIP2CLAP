@@ -11,6 +11,7 @@ from linear import LinearAligner
 from linear2 import LinearAligner2
 from linear3 import LinearAligner3
 from linear4 import LinearAligner4
+from linear5 import LinearAligner5
 def train():
     _, _, _ = get_models()
     train_data, test_data = get_data_gcc()
@@ -38,8 +39,8 @@ def train():
     train_dl = DataLoader(train_dataset, batch_size, shuffle=True)
     test_dl = DataLoader(test_dataset, batch_size, shuffle=True)
 
-    model = LinearAligner4(clip_embed_dim, clap_embed_dim)
-    model_name = "linear4_cos_sim_512"
+    model = LinearAligner5(clip_embed_dim, clap_embed_dim)
+    model_name = "linear5_euclid_512"
     print(f"Model Name: {model_name}")
     model.to(device)
     model = nn.DataParallel(model)
